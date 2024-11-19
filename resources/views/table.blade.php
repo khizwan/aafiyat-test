@@ -18,7 +18,7 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->gender }}</td>
-            <td>{{ $user->birthday->format('d/m/Y') }}</td>
+            <td>{{ \Carbon\Carbon::parse($user->birthday)->format('d/m/Y') }}</td>
             <td>{{ $user->created_at->format('d/m/Y H:i:s') }}</td>
             <td>
                 <form method="POST" action="{{ route('user.destroy', $user->id) }}">

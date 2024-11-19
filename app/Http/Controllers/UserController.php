@@ -27,7 +27,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::where('status_active', true)->get();
-        //return view('table', compact('users'));
+        return view('table', compact('users'));
         return response()->json(['users' => $users]);
     }
 
